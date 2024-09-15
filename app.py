@@ -35,7 +35,7 @@ if api_key:
     conversation = ConversationChain(llm=llm, memory=memory)
 
     # Create a Pandas DataFrame agent
-    dataframe_agent = create_pandas_dataframe_agent(llm, df, verbose=True)
+    dataframe_agent = create_pandas_dataframe_agent(llm, df, verbose=True,allow_dangerous_code=True)
 
     # User inputs
     location = st.number_input('Location')
