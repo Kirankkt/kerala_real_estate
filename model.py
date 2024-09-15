@@ -6,7 +6,7 @@ from sklearn.model_selection import GridSearchCV
 import pandas as pd
 import joblib
 import numpy as np
-Hplot_df_filer_cleaned_no_outliers=pd.read_csv(r'C:\Users\kthom\Documents\Kerala_Hosuing_RU\Hplot_df_filer_cleaned_no_outliers.csv')
+Hplot_df_filer_cleaned_no_outliers=pd.read_csv('Hplot_df_filer_cleaned_no_outliers.csv')
 # Separate features (X) and target (y)
 X = Hplot_df_filer_cleaned_no_outliers.drop(columns=['Plot__Price', 'Plot__name', 'Plot__url', 'Plot__DESC'])
 y = Hplot_df_filer_cleaned_no_outliers['Plot__Price']
