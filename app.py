@@ -22,7 +22,7 @@ scaler = joblib.load('scaler.pkl')
 df = pd.read_csv(r'C:\Users\kthom\Documents\Kerala_Hosuing_RU\Hplot_df_filer_cleaned_no_outliers.csv')
 
 # Set OpenAI API key
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = input("Please enter your OpenAI API key: ")
 
 # Initialize the language model
 llm = ChatOpenAI(temperature=0.7)
