@@ -19,7 +19,7 @@ memory = ConversationBufferMemory()
 
 # Set up OpenAI LLM
 # Set OpenAI API Key
-os.environ["OPENAI_API_KEY"] = "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"
+os.environ["OPENAI_API_KEY"] = input("Please enter your OpenAI API key: ")
 # Initialize the language model
 llm = ChatOpenAI(temperature=0.7)
 
