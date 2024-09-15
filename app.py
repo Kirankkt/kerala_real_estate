@@ -19,7 +19,7 @@ scaler = joblib.load('scaler.pkl')
 
 
 # Load the DataFrame
-df = pd.read_csv(r'C:\Users\kthom\Documents\Kerala_Hosuing_RU\Hplot_df_filer_cleaned_no_outliers.csv')
+df = pd.read_csv('Hplot_df_filer_cleaned_no_outliers.csv')
 
 # Set OpenAI API key
 os.environ["OPENAI_API_KEY"] = input("Please enter your OpenAI API key: ")
