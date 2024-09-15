@@ -6,6 +6,7 @@ from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
+import os
 
 # Streamlit UI
 st.title('Plot Price Predictor and Data Chat')
