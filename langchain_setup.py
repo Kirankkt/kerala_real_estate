@@ -11,7 +11,7 @@ import os
 
 
 # Load the data and model
-df = pd.read_csv(r'C:\Users\kthom\Documents\Kerala_Hosuing_RU\Hplot_df_filer_cleaned_no_outliers.csv')
+df = pd.read_csv('Hplot_df_filer_cleaned_no_outliers.csv')
 model = joblib.load('xgboost_model_7.pkl')
 # Create a conversational memory
 memory = ConversationBufferMemory()
