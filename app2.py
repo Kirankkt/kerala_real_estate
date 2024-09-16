@@ -81,9 +81,6 @@ if api_key:
         st.subheader("Correlation_chart")
         st.image('corr_chat.png', use_column_width=True)
 
-        st.subheader("EDA_report")
-        st.image('eda_report (1).html')
-
         st.subheader("Average plot area by location")
         st.image('avg_plot_area_by_location.png', use_column_width=True)
 
