@@ -1,2 +1,2 @@
 # kerala_real_estate
-Kerala_property_prediction
+Property prce perdiction in Trivadrum District
