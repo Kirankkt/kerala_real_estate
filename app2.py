@@ -94,7 +94,7 @@ if api_key:
         st.subheader("Exploratory Data Analysis (EDA) Report")
 
         # Path to the EDA report HTML file
-        with open('eda_report(1).html', 'r', encoding='utf-8') as f:
+        with open('eda_report (1).html', 'r', encoding='utf-8') as f:
             eda_html = f.read()
 
         # Add more charts as needed
