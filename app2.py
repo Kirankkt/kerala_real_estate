@@ -90,12 +90,11 @@ if api_key:
         st.subheader("Average price by location")
         st.image('avg_price_by_location.png', use_column_width=True)
 
-        # Embed EDA report (HTML)
         st.subheader("Exploratory Data Analysis (EDA) Report")
 
         # Path to the EDA report HTML file
         with open('eda_report (1).html', 'r', encoding='utf-8') as f:
             eda_html = f.read()
-
+        
         # Display the HTML content with increased height
         components.html(eda_html, height=1000, scrolling=True)  # Increased height to 1000
