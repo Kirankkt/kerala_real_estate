@@ -97,4 +97,5 @@ if api_key:
         with open('eda_report (1).html', 'r', encoding='utf-8') as f:
             eda_html = f.read()
 
-        # Add more charts as needed
+        # Display the HTML content with increased height
+        components.html(eda_html, height=1000, scrolling=True)  # Increased height to 1000
