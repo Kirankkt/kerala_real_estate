@@ -1,2 +1,2 @@
 # kerala_real_estate
-Property prce perdiction in Trivadrum District
+Property price prediction in Trivadrum District
