@@ -10,7 +10,7 @@ from langchain.chains import ConversationChain
 import os
 
 # Streamlit UI
-st.title('Plot Price Predictor and Data Chat')
+st.title('Plot Price Predictor')
 
 # Sidebar for navigation
 st.sidebar.title("Navigation")
@@ -180,11 +180,7 @@ if page == "Predictor":
         predicted_price = model.predict(input_data)
         st.write(f'Predicted Plot Price: {predicted_price[0]}')
 
-    # Chat with the DataFrame using LLM
-    user_query = st.text_input('Ask a question about the data:')
-    if st.button('Get Answer'):
-        response = dataframe_agent.run(user_query)
-        st.write(response)
+
 
 # Analytics Dashboard
 elif page == "View Analytics":
