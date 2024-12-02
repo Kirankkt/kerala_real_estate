@@ -152,12 +152,12 @@ if page == "Predictor":
     property_age = st.number_input('Property Age')
     bedroom_count = st.number_input('Bedroom Count')
     # User inputs in cents
-    build_area_cents = st.number_input('Build Area (in cents)')
+    build_area_cents = st.number_input('Build Area')
     plot_area_cents = st.number_input('Plot Area (in cents)')
     
     # Convert cents to square feet
     # 1 cent = 435.6 sqft
-    build_area = build_area_cents * 435.6
+    #build_area = build_area_cents * 435.6
     plot_area = plot_area_cents * 435.6
 
     # Prepare input for prediction
