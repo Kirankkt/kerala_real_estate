@@ -8,7 +8,7 @@ unstructured
 pypdf
 transformers
 scikit-learn==1.3.0
-crewai
+
 
 
 
