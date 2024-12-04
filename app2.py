@@ -204,6 +204,7 @@ elif page == "View Analytics":
     
     # Display the HTML content with increased height
     components.html(eda_html, height=1000, scrolling=True)  # Increased height to 1000
+
 # CrewAI Page
 elif page == "Ask CrewAI":
     st.header("Ask CrewAI Agents")
@@ -212,35 +213,55 @@ elif page == "Ask CrewAI":
     openai_key = st.text_input("Enter your OpenAI API Key:", type="password")
     serper_key = st.text_input("Enter your Serper API Key:", type="password")
 
+    # Only proceed if both keys are entered
     if openai_key and serper_key:
-        # Initialize agents if keys are provided
-        agents = initialize_agents(openai_key, serper_key)
+        try:
+            # Initialize agents with user-provided keys
+            agents = initialize_agents(openai_key, serper_key)
 
-        # Select Agent
-        selected_agent = st.selectbox(
-            "Choose the topic to ask about:",
-            ["Real Estate Research", "Furniture Storytelling", "Website Design Insights"],
-        )
+            # Select Agent
+            selected_agent = st.selectbox(
+                "Choose the topic to ask about:",
+                ["Real Estate Research", "Furniture Storytelling", "Website Design Insights"],
+            )
 
-        # Input Query
-        user_query = st.text_input("Enter your question here:")
+            # Input Query
+            user_query = st.text_input("Enter your question here:")
 
-        # Query Agents
-        if st.button("Ask Agent"):
-            if selected_agent == "Real Estate Research":
-                response = agents["real_estate_agent"].run(user_query)
-            elif selected_agent == "Furniture Storytelling":
-                response = agents["furniture_agent"].run(user_query)
-            elif selected_agent == "Website Design Insights":
-                response = agents["website_agent"].run(user_query)
-            else:
-                response = "Invalid selection. Please try again."
+            # Query Agents
+            if st.button("Ask Agent"):
+                if selected_agent == "Real Estate Research":
+                    response = agents["real_estate_agent"].run(user_query)
+                elif selected_agent == "Furniture Storytelling":
+                    response = agents["furniture_agent"].run(user_query)
+                elif selected_agent == "Website Design Insights":
+                    response = agents["website_agent"].run(user_query)
+                else:
+                    response = "Invalid selection. Please try again."
 
-            # Display Response
-            st.write("**Agent's Response:**")
-            st.write(response)
+                # Display Response
+                st.write("**Agent's Response:**")
+                st.write(response)
+        except Exception as e:
+            st.error(f"An error occurred: {e}")
     else:
         st.warning("Please enter both API keys to use this feature.")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
