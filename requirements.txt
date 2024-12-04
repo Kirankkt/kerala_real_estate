@@ -9,12 +9,7 @@ pypdf
 langchain_experimental
 transformers
 scikit-learn==1.3.0
-numpy>=1.21.6,<1.26
 crewai
-crewai-tools
-setuptools>=58.0.0
-wheel
-build
 
 
 
