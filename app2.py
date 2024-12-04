@@ -9,13 +9,10 @@ from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
 import os
 
-# Streamlit UI
-st.title('Plot Price Predictor')
-
-# Sidebar for navigation
+# Title and Navigation
+st.title('Plot Price Predictor and CrewAI Assistant')
 st.sidebar.title("Navigation")
-page = st.sidebar.radio("Go to", ["Predictor", "View Analytics"])
-
+page = st.sidebar.radio("Go to", ["Predictor", "View Analytics", "Ask CrewAI"])
 # API Key Input
 #api_key = st.text_input('Please enter your OpenAI API key:', type='password')
 
@@ -207,3 +204,53 @@ elif page == "View Analytics":
     
     # Display the HTML content with increased height
     components.html(eda_html, height=1000, scrolling=True)  # Increased height to 1000
+# CrewAI Page
+elif page == "Ask CrewAI":
+    st.header("Ask CrewAI Agents")
+
+    # Input API keys only for this section
+    openai_key = st.text_input("Enter your OpenAI API Key:", type="password")
+    serper_key = st.text_input("Enter your Serper API Key:", type="password")
+
+    if openai_key and serper_key:
+        # Initialize agents if keys are provided
+        agents = initialize_agents(openai_key, serper_key)
+
+        # Select Agent
+        selected_agent = st.selectbox(
+            "Choose the topic to ask about:",
+            ["Real Estate Research", "Furniture Storytelling", "Website Design Insights"],
+        )
+
+        # Input Query
+        user_query = st.text_input("Enter your question here:")
+
+        # Query Agents
+        if st.button("Ask Agent"):
+            if selected_agent == "Real Estate Research":
+                response = agents["real_estate_agent"].run(user_query)
+            elif selected_agent == "Furniture Storytelling":
+                response = agents["furniture_agent"].run(user_query)
+            elif selected_agent == "Website Design Insights":
+                response = agents["website_agent"].run(user_query)
+            else:
+                response = "Invalid selection. Please try again."
+
+            # Display Response
+            st.write("**Agent's Response:**")
+            st.write(response)
+    else:
+        st.warning("Please enter both API keys to use this feature.")
+
+
+
+
+
+
+
+
+
+
+
+
+
