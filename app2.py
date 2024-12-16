@@ -17,7 +17,7 @@ page = st.sidebar.radio("Go to", ["Predictor", "View Analytics"])
 #api_key = st.text_input('Please enter your OpenAI API key:', type='password')
 
 # Load the model and scaler
-model = joblib.load('gboost_model_7.pkl')
+model = joblib.load('gboost_model_9.pkl')
 scaler = joblib.load('scaler.pkl')
 
 # Load the DataFrame
