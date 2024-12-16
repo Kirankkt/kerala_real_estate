@@ -1,7 +1,7 @@
 streamlit
 pandas
 joblib
-scikit-learn==1.5.2
+scikit-learn
 langchain
 langchain-openai
 
