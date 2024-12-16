@@ -2,8 +2,7 @@ streamlit
 pandas
 joblib
 scikit-learn
-langchain
-langchain-openai
+
 
 
 
