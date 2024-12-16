@@ -3,7 +3,7 @@ import streamlit.components.v1 as components
 import pandas as pd
 import joblib
 from sklearn.preprocessing import StandardScaler
-from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
+#from langchain_experimental.agents.agent_toolkits import create_pandas_dataframe_agent
 from langchain_openai import ChatOpenAI
 from langchain.memory import ConversationBufferMemory
 from langchain.chains import ConversationChain
